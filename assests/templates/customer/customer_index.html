@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--backend for django-->
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <title>ADMINISTRATIVE MANAGEMENT </title>
+	<link rel="shortcut icon" type="image" href="../static/images/AMCLogo.jpeg">
+
+    <!-- font-awesome icons -->
+  `<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //font -->
+  <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script type="text/javascript">
+      jQuery(document).ready(function($) {
+          $(".scroll").click(function(event){
+              event.preventDefault();
+              $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+          });
+      });
+  </script>
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+  </head>
+  <style>
+	body
+	{
+		margin-top: 50px;
+	}
+	.text-center{
+        color:red;
+        font-size:50px;
+	}
+  </style>
+  <body>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-weight: bold; color: crimson; align-item: center;" href="{% url 'customer_index' %}"><img src="../static/images/AMCLogo.jpeg" style="width: 50px; align-item: center; border-radius: 50%;" alt="">&nbsp;ADMINISTRATIVE MANAGEMENT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" style="font-weight: bold; color: crimson;" id="offcanvasNavbarLabel">ADMINISTRATIVE MANAGEMENT</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" style="color: #000;" aria-current="page" href="{% url 'customer_index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: #000;" href="{% url 'customer_login' %}">Student</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" style="color: #000;" href="{% url 'bank_login' %}">College</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search Here" aria-label="Search">
+          <button class="btn btn-dark" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+    <!--<h1 class="text-center" style="font-weight: bold;">ADMINISTRATIVE MANAGEMENT </h1>-->
+    <!--<h6 class="text-center" style="background-color: crimson; color: #fff;">Here you can share your KYC documents for <b>Updating</b> existing customer or new customer and for any verification of the KYC from your respective banks!</h6>-->
+	<!--<div class="container mt-4">-->
+		<!--<div class="row row-cols-1 row-cols-md-2 g-4">-->
+  <!--<div class="col">-->
+    <!--<div class="card">-->
+      <!--<img src="../static/images/idVerify1.png" style=" display: block; max-width: 250px; margin: 0 auto;" class="card-img-top" alt="...">-->
+      <!--<div class="card-body">-->
+        <!--<h5 class="card-title text-danger text-center">Document Verification</h5>-->
+        <!--<p class="card-text" style="text-align: justify;">We scan the user’s photo ID and detect whether it’s genuine or fraudulent, down to a single pixel. We cover over 2,500 document types from 195 countries.</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col">-->
+    <!--<div class="card">-->
+      <!--<img src="../static/images/idVerify2.png" style="max-width: 250px; max-width: 250px; margin: 0 auto;" class="card-img-top" alt="...">-->
+      <!--<div class="card-body">-->
+        <!--<h5 class="card-title text-danger text-center">Biometric Analysis</h5>-->
+        <!--<p class="card-text" style="text-align: justify;">The user takes a selfie or a short video. Our technology checks their facial biometrics match those on the photo ID, and that the person presenting it is live and the genuine owner.</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col">-->
+    <!--<div class="card">-->
+      <!--<img src="../static/images/idVerify3.png" style="max-width: 250px; max-width: 250px; margin: 0 auto;" class="card-img-top" alt="...">-->
+      <!--<div class="card-body">-->
+        <!--<h5 class="card-title text-danger text-center">Experts in fraud and AI</h5>-->
+        <!--<p class="card-text" style="text-align: justify;">Our hybrid model uses a combination of AI and human experts. That’s how we deliver the speed and consistency of automation, plus the accuracy and expertise of a human team.</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col">-->
+    <!--<div class="card">-->
+      <!--<img src="../static/images/idVerify4.png" style="max-width: 250px; max-width: 250px; margin: 0 auto;" class="card-img-top" alt="...">-->
+      <!--<div class="card-body">-->
+        <!--<h5 class="card-title text-danger text-center">Biometric Customer Authentication</h5>-->
+        <!--<p class="card-text" style="text-align: justify;">Anchor a user’s account in their real identity—their photo ID and their face. Then reuse their biometrics as a key to access during high-risk moments, like account recovery and high-value transactions.</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+	<!--</div>-->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="../static/images/amc.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="text-center" style="font-weight: bold;">ADMINISTRATIVE MANAGEMENT </h1>
+        <p>Welcome to AMC ENGINEERING COLLEGE</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="../static/images/amc2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-center" style="font-weight: bold;">AMC ENGINNERING COLLEGE </h5>
+        <p><h1 class="text-center" style="font-weight: bold;">Welcome to AMC ENGINEERING COLLEGE</h1></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!------------------------------------------------ FOOTER PART ---------------------------------------------------------------->
+<footer class="bd-footer py-5 mt-5 bg-light">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-3 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
+          <img src="../static/images/AMCLogo.jpeg" style="width: 50px;" alt="IMG NOT FOUND">
+		  <span class="fs-5" style="color: crimson; font-weight: bold;">ADMINISTRATIVE MANAEMENT</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">WELCOME TO AMC ENGINEERING COLLEGE</li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a style="text-decoration: none;" href="index.html">Home</a></li>
+          <li class="mb-2"><a style="text-decoration: none;" href="Notifications.html">Updates</a></li>
+          <li class="mb-2"><a style="text-decoration: none;" href="login.html">Login</a></li>
+          <li class="mb-2"><a style="text-decoration: none;" href="about.html">About Us</a></li>
+          <li class="mb-2"><a style="text-decoration: none;" href="contactus.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <!--<div class="col-6 col-lg-2 mb-3">
+        <h5>Guide</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a style="text-decoration: none;" href="#">Sowmya B.K</a></li>
+        </ul>
+      </div>-->
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Projects</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a style="text-decoration: none;" href="https://mani733.github.io/LoanBankingSystem.github.io/index.html">Loan Banking Prediction</a></li>
+          <li class="mb-2"><a style="text-decoration: none;" href="https://mani733.github.io/OnlineVotingForStudents/">Online Voting System</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Team Members</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a style="text-decoration: none;" href="#">Manikanta H</a></li>
+          <li class="mb-2"><a style="text-decoration: none;" href="#">Nagaraj Adibatti</a></li>
+          <li class="mb-2"><a style="text-decoration: none;" href="#">Naveen Kumar A</a></li>
+          <li class="mb-2"><a style="text-decoration: none;" href="#">Pradeep Kumar V</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
